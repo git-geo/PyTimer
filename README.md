@@ -6,5 +6,5 @@ This repository is simple timer app which is written using ***Python language***
 ## Usage
 The usage is very easy. Just follow these simple steps:
 1. Enter amount of minutes of time you want to countdown in the ***"Minutes" input field***
-2. Enter amount of seconds in the ***"Minutes" input field***
+2. Enter amount of seconds in the ***"Seconds" input field***
 3. Press ***"Start timer" button***
