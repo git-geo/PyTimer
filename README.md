@@ -9,7 +9,7 @@ The usage is very easy. Just follow these simple steps:
 2. Enter amount of seconds in the ***"Seconds" input field***
 3. Press ***"Start timer" button***
 ## Issue
-if you want to enter only minutes or only seconds (not both things), PyTymer won't get started. This is because the opposite field isn't filled. If you need to fill only one field, then you'll enter 0 in opposite field. ***For example:***
-`Minutes: 20
-Seconds: 0`
+if you want to enter only minutes or only seconds (not both things), PyTymer won't get started. This is because the opposite field isn't filled. If you need to fill only one field, then you'll enter your amount in neccessary field and enter 0 in the opposite field. ***For example:***
+`Minutes: 20,
+Seconds: 0` or `Minutes: 0, Seconds: 8`
 
