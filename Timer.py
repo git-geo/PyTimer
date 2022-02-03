@@ -1,5 +1,5 @@
 import tkinter as tk
-import time
+from time import sleep
 
 win = tk.Tk()
 
@@ -7,7 +7,7 @@ win.geometry("350x300")
 win.title("Timer")
 win['bg'] = "black"
 win.wm_attributes("-alpha", 0.9)
-
+win.resizable(height=False, width=False)
 def timer():
     try:
         seconds = int(sec.get())
@@ -20,27 +20,30 @@ def timer():
         start_button.destroy()
 
         time_left_label = tk.Label(win, text="Time left:", fg="lime", bg="black", font="Consolas 20")
-        time_left_label.place(x=100, y=70)
+        time_left_label.place(x=100, y=50)
 
         time_left = tk.Label(win, text="", fg="lime", bg="black", font="Consolas 60")
-        time_left.place(x=80, y=120)
+        time_left.place(x=60, y=100)
 
 
         seconds = minutes * 60 + seconds
 
         for i in range(seconds):
-            ftime = divmod(seconds, 60)
-            rtime = f"{ftime[0]}:{ftime[1]}"
+            ftime = [str(x) for x in divmod(seconds, 60)]
+            rmtime = "0"+ftime[0] if int(ftime[0]) < 10 else ftime[0]
+            rstime = "0"+ftime[1] if int(ftime[1]) < 10 else ftime[1]
+            rtime = f"{rmtime}:{rstime}"
+
             time_left.config(text=rtime)
             seconds -= 1
             win.update()
-            time.sleep(1)
+            sleep(1)
 
         time_left.config(text="00:00", fg="red")
-        time_left.place(x=50, y=120)
+        time_left.place(x=60, y=100)
 
         time_left_label.config(text="Time has gone!", fg="red")
-        time_left_label.place(x=70, y=70)
+        time_left_label.place(x=70, y=50)
 
         win.wm_attributes("-topmost", True)
         print("\a")
